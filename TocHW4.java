@@ -13,7 +13,7 @@ import java.util.Comparator;
 import org.json.*;
 
 import java.io.*;
-public class TocHW4 {
+public class TocHw4 {
 
 	public static void main(String[] args) 
 	{
