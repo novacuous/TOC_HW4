@@ -1,7 +1,7 @@
 /*
- * ©m¦W¡GªL·¢µ¾
- * ¾Ç¸¹¡GF84006004
- * Â²­z¡G¥u»İµ¹¤©¤@­Ó¸ê®Æ¨Ó·½jsonÀÉ®×ªºURL³sµ²§@¬°°Ñ¼Æ¡Aµ{¦¡·|¦Û°Ê§ä¥X­ş­Ó¦a§}¦b³Ì¦h¤£¦P¤ë¥÷¦³¥æ©öªº¬ö¿ı¡C
+ * å§“åï¼šæ—æ¥·ç¿”
+ * å­¸è™Ÿï¼šF84006004
+ * ç°¡è¿°ï¼šåªéœ€çµ¦äºˆä¸€å€‹è³‡æ–™ä¾†æºjsonæª”æ¡ˆçš„URLé€£çµä½œç‚ºåƒæ•¸ï¼Œç¨‹å¼æœƒè‡ªå‹•æ‰¾å‡ºå“ªå€‹åœ°å€åœ¨æœ€å¤šä¸åŒæœˆä»½æœ‰äº¤æ˜“çš„ç´€éŒ„ã€‚
  * 
  */
 
@@ -28,7 +28,7 @@ public class TocHW4 {
 			JSONArray jsonRealPrice = new JSONArray(new JSONTokener(new InputStreamReader(new FileInputStream(inFile),"UTF-8")));
 			
 			JSONObject tmp = jsonRealPrice.getJSONObject(0);
-			Citylist.add(new District(tmp.getString("¶mÂí¥«°Ï")));
+			Citylist.add(new District(tmp.getString("é„‰é®å¸‚å€")));
 			
 			
 				
@@ -37,12 +37,12 @@ public class TocHW4 {
 				JSONObject jsontmp = jsonRealPrice.getJSONObject(i);
 				
 				int j = 0;
-				for(j = 0 ; j < Citylist.size() && !Citylist.get(j).District.equals(jsontmp.getString("¶mÂí¥«°Ï")) ;j++);
+				for(j = 0 ; j < Citylist.size() && !Citylist.get(j).District.equals(jsontmp.getString("é„‰é®å¸‚å€")) ;j++);
 				
 				if(j == Citylist.size())
-					Citylist.add(new District(jsontmp.getString("¶mÂí¥«°Ï")));
+					Citylist.add(new District(jsontmp.getString("é„‰é®å¸‚å€")));
 				
-				Road temp = Citylist.get(j).matchRoad(jsontmp.getString("¤g¦a°Ï¬q¦ì¸m©Î«Øª«°ÏªùµP"), jsontmp.getInt("¥æ©ö¦~¤ë"), jsontmp.getInt("Á`»ù¤¸"));
+				Road temp = Citylist.get(j).matchRoad(jsontmp.getString("åœŸåœ°å€æ®µä½ç½®æˆ–å»ºç‰©å€é–€ç‰Œ"), jsontmp.getInt("äº¤æ˜“å¹´æœˆ"), jsontmp.getInt("ç¸½åƒ¹å…ƒ"));
 				
 				if(temp != null)
 				{
@@ -75,7 +75,7 @@ public class TocHW4 {
 			});
 			
 			for(int i = 0; i < Max.size();i++)
-				System.out.println(Max.get(i).Name+", ³Ì°ª¦¨¥æ»ù:"+Max.get(i).maxprice+", ³Ì§C¦¨¥æ»ù:"+Max.get(i).minprice );
+				System.out.println(Max.get(i).Name+", æœ€é«˜æˆäº¤åƒ¹:"+Max.get(i).maxprice+", æœ€ä½æˆäº¤åƒ¹:"+Max.get(i).minprice );
 			
 		
 		} 
@@ -99,7 +99,7 @@ public class TocHW4 {
 	
 	static void download(String url)
 	{
-		//System.out.println("¥¿¦b¤U¸ü¸ê®Æ......");
+		//System.out.println("æ­£åœ¨ä¸‹è¼‰è³‡æ–™......");
 		try 
 		{
 			URL sourse = new URL(url);
@@ -125,7 +125,7 @@ public class TocHW4 {
 			oStream.close();
 			
 			
-			//System.out.println("¤U¸ü§¹¦¨!!");
+			//System.out.println("ä¸‹è¼‰å®Œæˆ!!");
 			
 			
 			

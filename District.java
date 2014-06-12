@@ -19,13 +19,13 @@ public class District
 	
 	public Road matchRoad(String address,int YearMonth,int price)
 	{
-		int end = address.indexOf("¸ô");
+		int end = address.indexOf("è·¯");
 		
 		if(end == -1)
-			end = address.indexOf("µó");
+			end = address.indexOf("è¡—");
 		
 		if(end == -1)
-			end = address.indexOf("«Ñ");
+			end = address.indexOf("å··");
 		
 		if(end == -1)
 			return null;
