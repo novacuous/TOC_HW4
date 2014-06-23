@@ -2,7 +2,7 @@
  * 姓名：林楷翔
  * 學號：F84006004
  * 簡述：只需給予一個資料來源json檔案的URL連結作為參數，程式會自動找出哪個地址在最多不同月份有交易的紀錄。
- * 
+ *
  */
 
 import java.net.*;
@@ -15,7 +15,7 @@ import org.json.*;
 import java.io.*;
 public class TocHw4 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		download(args[0]);
 		
@@ -23,7 +23,7 @@ public class TocHw4 {
 		ArrayList<District> Citylist = new ArrayList<District>();
 		ArrayList<Road> Max = new ArrayList<Road>();
 		
-		try 
+		try
 		{
 			JSONArray jsonRealPrice = new JSONArray(new JSONTokener(new InputStreamReader(new FileInputStream(inFile),"UTF-8")));
 			
@@ -70,7 +70,7 @@ public class TocHw4 {
 			Collections.sort(Max,new Comparator<Road>()
 			{
 				@Override
-				public int compare(Road arg0, Road arg1) 
+				public int compare(Road arg0, Road arg1)
 				{	return arg0.No-arg1.No;}
 			});
 			
@@ -78,29 +78,33 @@ public class TocHw4 {
 				System.out.println(Max.get(i).Name+", 最高成交價:"+Max.get(i).maxprice+", 最低成交價:"+Max.get(i).minprice );
 			
 		
-		} 
-		catch (UnsupportedEncodingException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		catch (FileNotFoundException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		catch (JSONException e) 
+		}
+		catch (UnsupportedEncodingException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		catch (FileNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (JSONException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	/*	
+		for(int i = 0; i < Citylist.size();i++)
+			for(int j = 0;j < Citylist.get(i).Roadlist.size();j++)
+				System.out.println(Citylist.get(i).Roadlist.get(j).Name);
+				*/
 	}
 	
 	static void download(String url)
 	{
 		//System.out.println("正在下載資料......");
-		try 
+		try
 		{
 			URL sourse = new URL(url);
 			
@@ -129,8 +133,8 @@ public class TocHw4 {
 			
 			
 			
-		} 
-		catch (MalformedURLException e) 
+		}
+		catch (MalformedURLException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
